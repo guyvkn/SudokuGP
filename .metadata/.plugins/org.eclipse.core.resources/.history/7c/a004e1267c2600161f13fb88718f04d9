@@ -1,0 +1,91 @@
+package SodukoGame;
+
+public class BoardIndividual extends Individual {
+	Node<String> IndividualTree;
+	int Hight;
+	
+	
+	
+	
+	public BoardIndividual(int hight) {
+		super();
+		Hight = hight;
+		IndividualTree=new Node<String>("Root");
+		
+		CreatFullTree(0,IndividualTree );
+		
+		System.out.println("We create the tree"); 
+		
+		print(IndividualTree);
+		
+	}
+	
+	public void CreatFullTree(int hight , Node<String> node ) {
+		if(this.Hight-1 > hight)
+		{
+			Node<String> left =  new Node<String>("operator");
+			node.setLeft(left);
+			CreatFullTree(hight+1 , node.getLeft());
+			
+			Node<String> right =  new Node<String>("operator");
+			node.setRight(right);
+			CreatFullTree(hight+1 , node.getRight());
+		}
+		else
+		{
+			if(this.Hight-1== hight)
+			{
+				Node<String> left =  new Node<String>("function");
+				node.setLeft(left);
+				
+				Node<String> right =  new Node<String>("function");
+				node.setRight(right);
+				
+			}
+		}
+		
+	}
+	void print (Node<String> node)
+	{
+		if (node.getLeft() != null)
+			print(node.getLeft());
+		
+		System.out.print(node.getValue() + " ");
+		
+		if (node.getRight() != null)
+			print(node.getRight());
+	}
+	
+	
+	public static void main(String[] args) {
+<<<<<<< HEAD
+=======
+		
+>>>>>>> parent of 10235ad... null
+		BoardIndividual mybord= new BoardIndividual(2);		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	@Override
+	protected double evaluate() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public Individual mutate() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Individual crossover(Individual other) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,168 @@
+package SodukoGame;
+
+import java.util.ArrayList;
+import java.util.Dictionary;
+
+import java.util.Hashtable;
+
+
+public class TerminalPrimitive {
+	
+	final static int Size=9;
+	static Integer num=9;
+	static int[][] Board = new int[Size][Size];
+	
+	Dictionary <Integer,Double>[][] m ;
+
+
+
+	@SuppressWarnings("unchecked")
+	public TerminalPrimitive() {
+		this.m = new Dictionary [9][9];
+		for(int i=0;i<Size;i++)
+		{
+			for(int j=0;j<Size;j++)
+			{
+				this.m[i][j]=new Hashtable<Integer,Double>();
+				
+				
+			}
+		}
+		FillMatCheck();
+		PrintCheck();
+	}
+	static ArrayList<String> functionNames= new  ArrayList<String>();
+	static ArrayList<String> Operators=new  ArrayList<String>();
+
+
+	
+	public static ArrayList<String> getFunctionNames() {
+		return functionNames;
+	}
+	public static ArrayList<String> getOperators() {
+		return Operators;
+	}
+
+	
+	
+	
+	static void FillFunctionName()
+	{
+		functionNames.add("fun1");
+		functionNames.add("fun2");
+		functionNames.add("fun3");
+		functionNames.add("fun4");
+		
+
+	}
+	static void FillOperators()
+	{
+		Operators.add("+");
+		Operators.add("-");
+		Operators.add("/");
+		Operators.add("*");
+		Operators.add("^");
+	}
+
+
+	public TerminalPrimitive(ArrayList<String> functionNames) {
+		
+	}
+	
+	int Runfunction (String FunName)
+	{
+		switch (FunName){
+			case "fun1":
+				return fun1();
+				
+			case "fun2":
+				return fun2();
+				
+			case "fun3":
+				return fun3();
+			
+			case "fun4":
+				return fun4();
+			default :
+				return 0;
+		}
+		
+	}
+	
+	int fun1(){
+		return 1;
+	}
+	int fun2(){
+		return 2;
+	}
+	int fun3(){
+		return 3;
+	}
+	int fun4(){
+		return 4;
+	}
+	
+	int calculate(String left,String Operator,String Right)
+	{
+		int leftValue,rightValue;
+		if(functionNames.contains(left))
+		{
+			leftValue=Runfunction(left);
+		}
+		else
+		{
+			leftValue=Integer.parseInt(left);
+		}
+		
+		if(functionNames.contains(Right))
+		{
+			rightValue=Runfunction(Right);
+		}
+		else
+		{
+			rightValue=Integer.parseInt(Right);
+		}
+		 return calculateOperator(leftValue,Operator,rightValue);
+	}
+	
+	int calculateOperator(int left,String Operator,int Right)
+	{
+		switch (Operator){
+		case "*":
+			return left * Right;
+			
+		case "-":
+			return left - Right;
+
+		case "+":
+			return left + Right;
+			
+		case "/":
+			return left / Right;
+			
+		case "^":
+			return (int) Math.pow(left,Right);
+			
+		default :
+			return 1;
+		}
+		
+	}
+	void FillMatCheck()
+	{
+		m[0][0].put(0, 1*0.2);
+		m[0][0].put(1, 1*0.3);
+		m[0][0].put(2, 1*0.4);
+		m[0][0].put(3, 1*0.5);				
+	}
+	void PrintCheck()
+	{
+		System.out.println();
+		System.out.println(this.m[0][0].get(0));
+		System.out.println(this.m[0][0].get(1));
+		System.out.println(this.m[0][0].get(2));
+		System.out.println(this.m[0][0].get(3));
+
+	}
+	
+	}

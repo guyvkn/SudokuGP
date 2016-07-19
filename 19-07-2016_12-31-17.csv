@@ -1,0 +1,18 @@
+Genetic Sudoku Experiment
+Experiment Time: 19/07/2016 12:31:17
+Expirement Parameters:,
+Orginal Empty Cells:,49,
+Population Size:,100,
+Max Generations:,50,
+Crossover Probability:,0.8,
+Mutation Probability:,0.2,
+Percent of good indviduals from population:,0.4,
+,
+Primitive Set:,
+Plus,Minus,Multi,div,Mod,Maximum,Minimum,
+Terminal Set:,
+countEmptyCellInRow,countEmptyCellInCol,countEmptyCellInSquare,NumOfOptionsInCell,numOfOptionsToAppearInBoard,countEmptyCellsInRowsContainsNum,countEmptyCellsInColsContainsNum,countEmptyCellsInSquareContainsNum,countEmptyCellsInRows_ThatNotContainsNum,countEmptyCellsInCols_ThatNotContainsNum,countEmptyCellsInSquare_ThatNotContainsNum,
+,
+,
+Generation,Worst Individual Fitness,Best Individual Fitness,Average Fitness,Best Individual Tree - Prefix,Best Individual Tree - Infix,
+0,20.0,0.0,10.83,Maximum( Maximum( Maximum( Multi( Multi( NumOfOptionsInCell  countEmptyCellsInCols_ThatNotContainsNum )  Multi( countEmptyCellInCol  countEmptyCellInRow ) )  Plus( Multi( countEmptyCellInRow  countEmptyCellsInCols_ThatNotContainsNum )  Plus( countEmptyCellInSquare  numOfOptionsToAppearInBoard ) ) )  Maximum( Minus( Maximum( countEmptyCellsInCols_ThatNotContainsNum  numOfOptionsToAppearInBoard )  Plus( NumOfOptionsInCell  countEmptyCellsInCols_ThatNotContainsNum ) )  Minus( Minimum( countEmptyCellsInRows_ThatNotContainsNum  countEmptyCellsInRowsContainsNum )  Minimum( countEmptyCellInRow  countEmptyCellsInColsContainsNum ) ) ) )  Minus( Plus( Mod( Mod( countEmptyCellInCol  countEmptyCellsInRows_ThatNotContainsNum )  Minus( countEmptyCellInCol  countEmptyCellInCol ) )  Plus( Maximum( numOfOptionsToAppearInBoard  countEmptyCellsInCols_ThatNotContainsNum )  Minus( countEmptyCellsInSquare_ThatNotContainsNum  countEmptyCellInSquare ) ) )  Minimum( Plus( div( countEmptyCellsInColsContainsNum  countEmptyCellsInColsContainsNum )  Multi( countEmptyCellInRow  countEmptyCellInCol ) )  Mod( Plus( countEmptyCellsInSquareContainsNum  countEmptyCellsInRows_ThatNotContainsNum )  Multi( countEmptyCellInSquare  countEmptyCellsInRows_ThatNotContainsNum ) ) ) ) ),((((( NumOfOptionsInCell  *  countEmptyCellsInCols_ThatNotContainsNum ) * ( countEmptyCellInCol  *  countEmptyCellInRow )) Max (( countEmptyCellInRow  *  countEmptyCellsInCols_ThatNotContainsNum ) + ( countEmptyCellInSquare  +  numOfOptionsToAppearInBoard ))) Max ((( countEmptyCellsInCols_ThatNotContainsNum  Max  numOfOptionsToAppearInBoard ) - ( NumOfOptionsInCell  +  countEmptyCellsInCols_ThatNotContainsNum )) Max (( countEmptyCellsInRows_ThatNotContainsNum  Min  countEmptyCellsInRowsContainsNum ) - ( countEmptyCellInRow  Min  countEmptyCellsInColsContainsNum )))) Max (((( countEmptyCellInCol  %  countEmptyCellsInRows_ThatNotContainsNum ) % ( countEmptyCellInCol  -  countEmptyCellInCol )) + (( numOfOptionsToAppearInBoard  Max  countEmptyCellsInCols_ThatNotContainsNum ) + ( countEmptyCellsInSquare_ThatNotContainsNum  -  countEmptyCellInSquare ))) - ((( countEmptyCellsInColsContainsNum  /  countEmptyCellsInColsContainsNum ) + ( countEmptyCellInRow  *  countEmptyCellInCol )) Min (( countEmptyCellsInSquareContainsNum  +  countEmptyCellsInRows_ThatNotContainsNum ) % ( countEmptyCellInSquare  *  countEmptyCellsInRows_ThatNotContainsNum ))))),
